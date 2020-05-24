@@ -1,0 +1,52 @@
+<section class="phx-hero">
+  <h1>Digi ID demo with Phoenix LiveView</h1>
+
+  <%= if @logged_in do %>
+
+  <div id="logged_in">
+    <p>Successfully logged in from address <strong><%= @address %></strong></p>
+
+    <p><a href="#" class="btn btn-default" phx-click="logout">logout</a></p>
+  </div>
+
+  <% else %>
+
+  <div id="login">
+    <p class="lead">Scan the following QR code to login</p>
+    <a id="loginLink" href="<%= @digiid_uri %>">
+      <img src="<%= @qrcode_url %>" />
+      <img src="/images/dgb-icon.svg" class="icon" />
+    </a>
+  </div>
+
+  <% end %>
+
+</section>
+
+<section class="row">
+  <article class="column">
+    <h2>Phoenix</h2>
+    <ul>
+      <li>
+        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
+      </li>
+    </ul>
+  </article>
+  <article class="column">
+    <h2>DigiByte</h2>
+    <ul>
+      <li>
+        <a href="https://www.digi-id.io/index.html">Digi-ID</a>
+      </li>
+      <li>
+        <a href="https://digibyte.io/">DigiByte</a>
+      </li>
+    </ul>
+  </article>
+</section>
