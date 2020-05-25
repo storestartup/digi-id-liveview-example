@@ -14,4 +14,14 @@ defmodule DigiIdDemo do
       |> binary_part(0, length)
   end
 
+  def callback_url() do
+    case Application.get_env(:digi_id_demo, :env) do
+      :dev ->
+        "#{Ngrok.public_url()}/auth"
+
+      _ ->
+        DigiIdDemoWeb.Router.Helpers.auth_url(DigiIdDemoWeb.Endpoint, :auth)
+    end
+  end
+
 end

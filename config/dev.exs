@@ -21,6 +21,8 @@ config :digi_id_demo, DigiIdDemoWeb.Endpoint,
     ]
   ]
 
+config :digi_id_demo, env: :dev
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

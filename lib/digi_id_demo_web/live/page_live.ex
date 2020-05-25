@@ -6,7 +6,7 @@ defmodule DigiIdDemoWeb.PageLive do
   @impl true
   def mount(_params, _session, socket) do
     digi = %DigiID{
-      callback: "#{Ngrok.public_url}/auth",
+      callback: DigiIdDemo.callback_url(),
       secure: false,
       nonce: DigiIdDemo.generate_nonce()
     }
