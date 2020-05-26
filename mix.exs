@@ -45,7 +45,7 @@ defmodule DigiIdDemo.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:eqrcode, "~> 0.1.6"},
-      {:digiid_ex, path: "../digiid_ex"},
+      {:digiid_ex, git: "https://github.com/storestartup/digiid_ex.git"},
       {:ex_ngrok, "~> 0.3.4", only: [:dev]}
     ]
   end
