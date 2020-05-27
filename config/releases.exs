@@ -18,7 +18,8 @@ config :digi_id_demo, DigiIdDemoWeb.Endpoint,
   ],
   url: [
     host: System.get_env("APP_NAME") <> ".gigalixirapp.com",
-    port: 443
+    port: 443,
+    scheme: "https"
   ],
   secret_key_base: secret_key_base
 
