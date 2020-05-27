@@ -28,13 +28,11 @@ defmodule DigiIdDemoWeb.PageLive do
 
   @impl true
   def handle_info({"login", addr}, socket) do
-    Logger.info "LoginLiveView received login message for #{addr}"
     {:noreply, assign(socket, logged_in: true, address: addr)}
   end
 
   @impl true
   def handle_event("logout", _value, socket) do
-    Logger.info "LoginLiveView received logout event"
     {:noreply, assign(socket, logged_in: false, address: nil)}
   end
 
