@@ -7,7 +7,7 @@ defmodule DigiIdDemoWeb.PageLive do
   def mount(_params, _session, socket) do
     digi = %DigiID{
       callback: DigiIdDemo.callback_url(),
-      secure: false,
+      secure: use_secure(),
       nonce: DigiIdDemo.generate_nonce()
     }
 
@@ -36,6 +36,10 @@ defmodule DigiIdDemoWeb.PageLive do
   def handle_event("logout", _value, socket) do
     Logger.info "LoginLiveView received logout event"
     {:noreply, assign(socket, logged_in: false, address: nil)}
+  end
+
+  def use_secure() do
+    Application.get_env(:digi_id_demo, :env) != :dev
   end
 
 end
